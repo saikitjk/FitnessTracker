@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Schema = mogoose.Schema;
+const Schema = mongoose.Schema;
 const WorkoutSchema = new Schema(
   {
     day: {
@@ -36,9 +36,9 @@ const WorkoutSchema = new Schema(
         },
       },
     ],
-    totalDuration: {
-      type: Number,
-    },
+    // totalDuration: {
+    //   type: Number,
+    // },
   },
   {
     toJSON: {
