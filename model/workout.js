@@ -18,7 +18,7 @@ const WorkoutSchema = new Schema(
           trim: true,
           required: "Workout name is required, please enter an exercise type.",
         },
-        duratiom: {
+        duration: {
           type: Number,
           required: "Please enter the workout duration in minutes.",
         },
@@ -49,7 +49,7 @@ const WorkoutSchema = new Schema(
 
 WorkoutSchema.virtual("totalDuration").get(function () {
   return this.exercises.reduce((total, exercise) => {
-    return total + exercise.duratiom;
+    return total + exercise.duration;
   }, 0);
 });
 
