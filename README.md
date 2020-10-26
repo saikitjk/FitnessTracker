@@ -22,6 +22,8 @@ https://uw-fitness-tracker.herokuapp.com/?id=5f9731b952b32c002e23e352
 
 ## Table of contents
 
+- [Technology](#Technology)
+
 - [Install](#installation)
 
 - [Usage](#Usage)
