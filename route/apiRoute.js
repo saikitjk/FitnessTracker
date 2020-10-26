@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../model/workout");
+//const db = require("../model/workout");
 const Workout = require("../model/workout.js");
 
 router.get("/api/workouts", (req, res) => {
@@ -25,9 +25,11 @@ router.post("/api/workouts", (req, res) => {
     });
 });
 
-router.get("/api/workouts/range", ({ query }, res) => {
-  Workout.find({})
-    .where({ day: { $gte: query.start, $lte: query.end } })
+router.get("/api/workouts/range", (req, res) => {
+  //   Workout.find({})
+  //     .where({ day: { $gte: query.start, $lte: query.end } })
+  Workout.find({}, null, { sort: { day: 1 } })
+    .populate("exercises")
     .then((dbWorkouts) => {
       res.json(dbWorkouts);
     })
