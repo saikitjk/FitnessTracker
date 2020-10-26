@@ -11,13 +11,13 @@ router.get("/api/workouts", (req, res) => {
     .catch((err) => {
       res.json(err);
     });
-  console.log("gg test route");
+  //console.log("gg test route");
 });
 
 router.post("/api/workouts", (req, res) => {
   Workout.create({})
     .then((dbWorkout) => {
-      console.log(dbWorkout);
+      //console.log(dbWorkout);
       res.json(dbWorkout);
     })
     .catch((err) => {
@@ -26,8 +26,6 @@ router.post("/api/workouts", (req, res) => {
 });
 
 router.get("/api/workouts/range", (req, res) => {
-  //   Workout.find({})
-  //     .where({ day: { $gte: query.start, $lte: query.end } })
   Workout.find({}, null, { sort: { day: 1 } })
     .populate("exercises")
     .then((dbWorkouts) => {
