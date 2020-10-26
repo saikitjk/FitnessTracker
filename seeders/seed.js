@@ -131,7 +131,7 @@ let workoutSeed = [
 ];
 
 db.Workout.deleteMany({})
-  .then(() => db.Workout.collection.insertMany(workoutSeed))
+  .then(() => db.Workout.insertMany(workoutSeed))
   .then((data) => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
@@ -140,3 +140,17 @@ db.Workout.deleteMany({})
     console.error(err);
     process.exit(1);
   });
+
+// var done = 0;
+// for (var i = 0; i < workoutSeed.length; i++) {
+//   db.Workout[i].save(function (err, result) {
+//     done++;
+//     if (done === Workout.length) {
+//       exit();
+//     }
+//   });
+// }
+
+// function exit() {
+//   mongoose.disconnect();
+// }
